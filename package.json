@@ -1,0 +1,38 @@
+{
+  "name": "xbm-node-sdk",
+  "version": "1.0.1",
+  "description": "小斑马 SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/gulp",
+    "mocha": "./node_modules/.bin/mocha -u bdd --recursive --timeout 100000 ",
+    "cov": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aircos/xbm-node-sdk.git"
+  },
+  "keywords": [],
+  "author": "aircos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aircos/xbm-node-sdk/issues"
+  },
+  "homepage": "https://github.com/aircos/xbm-node-sdk#readme",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "gulp": "^3.9.0",
+    "gulp-bump": "^2.0.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-mocha": "^2.1.3",
+    "gulp-watch": "^4.3.4",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.2.5"
+  }
+}
