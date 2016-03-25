@@ -62,4 +62,18 @@ describe('TEST file lib/stock.js', function () {
       })
     });
   })
+  describe('TEST function list_products', function () {
+    it('查看货品列表', function (done) {
+      uc.get_token(function (err, token) {
+        should.not.exist(err);
+        stock.list_products(token, function (err, products) {
+          should.not.exist(err);
+          should.exist(products);
+          products.should.be.an('Array');
+          products.length.should.be.above(0);
+          done();
+        })
+      })
+    });
+  })
 })
