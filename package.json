@@ -23,6 +23,7 @@
     "test": "test"
   },
   "dependencies": {
+    "is_js": "^0.8.0",
     "request": "^2.69.0"
   },
   "devDependencies": {
