@@ -1,6 +1,6 @@
 {
   "name": "xbm-node-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "小斑马 SDK",
   "main": "index.js",
   "scripts": {

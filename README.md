@@ -21,24 +21,7 @@ $ npm run cov
 
 ## Usage
 
-引入 UserCenter 并实例化
-
-```javascript
-var UserCenter = require('xbm-sdk').UserCenter;
-var uc = new UserCenter('13800138000', '10086');
-```
-
-获取用户 token
-
-```javascript
-uc.get_token(function (err, token) {
-  if (err) {
-    console.log(err);
-  }
-
-  var token = token;
-})
-```
+[查看 API 文档](http://aircos.github.io/xbm-node-sdk/api.html)
 
 ## Contributing
 
