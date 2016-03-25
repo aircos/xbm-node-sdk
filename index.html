@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>xbm-node-sdk Documentation</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="小斑马 SDK" />
+    <script src="assets/prettify.js"></script>
+    <script src="assets/jquery-1.8.2.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/base.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top top-navbar" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">xbm-node-sdk</a>
+        </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          
+            <li>
+              <a href="./api.html">API Docs</a>
+            </li>
+          
+          
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    <header class="jumbotron subhead">
+      <div class="container">
+        <h1>xbm-node-sdk <small>Version: 1.0.1 By @aircos</small></h1>
+        <p class="lead">
+          小斑马 SDK
+        </p>
+      </div>
+    </header>
+
+<div class="container content">
+  <div class="row">
+  	<div class="col-md-3">
+      <ul class="nav nav-list bs-docs-sidenav affix">
+
+  <li class="level_2">
+    <a href="#index_功能列表" title="功能列表">
+      <i class="icon-chevron-right"></i>功能列表
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_Installation" title="Installation">
+      <i class="icon-chevron-right"></i>Installation
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_Test" title="Test">
+      <i class="icon-chevron-right"></i>Test
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_Usage" title="Usage">
+      <i class="icon-chevron-right"></i>Usage
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_Contributing" title="Contributing">
+      <i class="icon-chevron-right"></i>Contributing
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_版本历史" title="版本历史">
+      <i class="icon-chevron-right"></i>版本历史
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_欢迎fork和反馈" title="欢迎fork和反馈">
+      <i class="icon-chevron-right"></i>欢迎fork和反馈
+    </a>
+  </li>
+
+  <li class="level_2">
+    <a href="#index_License" title="License">
+      <i class="icon-chevron-right"></i>License
+    </a>
+  </li>
+
+</ul>
+
+    </div>
+    <div class="col-md-9">
+      <section>
+        <h1>xbm-sdk</h1>
+<p>小斑马 SDK</p><h2>功能列表</h2>
+<ul>
+<li>授权登录</li>
+</ul>
+<h2>Installation</h2>
+<pre><code>$ npm install xbm-node-sdk
+</code></pre><h2>Test</h2>
+<pre><code>$ npm run mocha
+$ npm run cov
+</code></pre><h2>Usage</h2>
+<p>引入 UserCenter 并实例化</p><pre><code class="lang-javascript">var UserCenter = require(&#39;xbm-sdk&#39;).UserCenter;
+var uc = new UserCenter(&#39;13800138000&#39;, &#39;10086&#39;);
+</code></pre>
+<p>获取用户 token</p><pre><code class="lang-javascript">uc.get_token(function (err, token) {
+  if (err) {
+    console.log(err);
+  }
+
+  var token = token;
+})
+</code></pre>
+<h2>Contributing</h2>
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am &#39;Add some feature&#39;</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+<h2>版本历史</h2>
+<ul>
+<li>v1.0.1 初始化</li>
+</ul>
+<h2>欢迎fork和反馈</h2>
+<ul>
+<li>write by <code>i5ting</code> shiren1118@126.com</li>
+</ul>
+<p>如有建议或意见，请在issue提问或邮件</p><h2>License</h2>
+<p>this repo is released under the <a href="http://www.opensource.org/licenses/MIT">MIT License</a>.</p>
+      </section>
+  
+    </div>
+  </div>
+</div>
+      <footer class="footer">
+        <div class="container">
+          <p class="pull-right">
+            <a href="#">Back to top</a>
+          </p>
+          <p>此文档通过doxmate生成。主题借鉴Bootstrap API文档风格，注解基于<a href="https://github.com/visionmedia/dox">Dox</a>。欢迎关注doxmate作者<a href="http://weibo.com/shyvo" target="_blank">@朴灵</a></p>
+          <ul class="footer-links">
+            <li><a href="https://github.com/visionmedia/dox">Dox主页</a></li>
+            <li><a href="http://html5ify.com/doxmate">Doxmate主页</a></li>
+            <li><a href="https://github.com/JacksonTian/doxmate">Doxmate源码</a></li>
+            <li><a href="https://github.com/JacksonTian/doxmate/issues?state=open">提交bug</a></li>
+          </ul>
+      </div>
+    </footer>
+    <script>
+      $(function() {
+        $('pre').addClass('prettyprint');
+        $('td pre').removeClass('prettyprint');
+        prettyPrint();
+        var $window = $(window);
+        var sidenav = $('.bs-docs-sidenav');
+        if (sidenav.height() < window.innerHeight) {
+          sidenav.affix({
+            offset: {
+              top: function () {
+                return $window.width() <= 980 ? 290 : 210
+              },
+              bottom: 200
+            }
+          });
+        } else {
+          sidenav.removeClass('affix');
+        }
+        $(".content").find('h1, h2, h3, h4, h5, h6').each(function () {
+          var node = $(this);
+          // 总是设置id
+          node.attr("id", node.data('id') || "index_" + node.text());
+        });
+
+        $('.bs-docs-sidenav .accordion-marker').on('click', function(event) {
+          var current = $(event.currentTarget);
+          current.find('.glyphicon').toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+        });
+      });
+    </script>
+  
+  </body>
+</html>
+

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>xbm-node-sdk Documentation</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="小斑马 SDK" />
+    <script src="assets/prettify.js"></script>
+    <script src="assets/jquery-1.8.2.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/base.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-static-top top-navbar" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">xbm-node-sdk</a>
+        </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          
+            <li>
+              <a href="./api.html">API Docs</a>
+            </li>
+          
+          
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+    <header class="jumbotron subhead">
+      <div class="container">
+        <h1>xbm-node-sdk <small>Version: 1.0.1 By @aircos</small></h1>
+        <p class="lead">
+          小斑马 SDK
+        </p>
+      </div>
+    </header>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 bs-docs-sidebar">
+      <ul class="nav nav-list bs-docs-sidenav affix">
+
+  <li>
+		<div class="accordion" id="stock">
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a href="#api_stock" class="api_side_link">stock</a>
+					<div class="accordion-marker">
+						<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#stock" href="#collapse_stock">
+							 <span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+				<div class="accordion-body collapse" id="collapse_stock">
+					<div class="accordion-inner">
+					<ul class="indexs">
+					
+						<li>
+							<a href="#stock__create_product">create_product</a>
+						</li>
+					
+					</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+  </li>
+
+  <li>
+		<div class="accordion" id="usercenter">
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a href="#api_usercenter" class="api_side_link">usercenter</a>
+					<div class="accordion-marker">
+						<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#usercenter" href="#collapse_usercenter">
+							 <span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+				<div class="accordion-body collapse" id="collapse_usercenter">
+					<div class="accordion-inner">
+					<ul class="indexs">
+					
+						<li>
+							<a href="#usercenter__get_token">get_token</a>
+						</li>
+					
+						<li>
+							<a href="#usercenter__get_user_info">get_user_info</a>
+						</li>
+					
+					</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+  </li>
+
+</ul>
+
+    </div>
+    <div class="col-md-9">
+      
+        <section id="api_stock" class="api">
+  <h2>stock: API索引</h2>
+  <ul class="indexs">
+  
+    <li>
+      <a href="#stock__create_product">create_product</a>
+    </li>
+
+  </ul>
+  <hr />
+
+  
+  <h3 data-id="stock__create_product">
+    create_product
+  </h3>
+  
+
+  <p>创建</p><p>Examples:</p><pre><code class="lang-javascript">var UserCenter = require(&#39;xbm-sdk&#39;).UserCenter;
+var Stock = require(&#39;xbm-sdk&#39;).Stock;
+var uc = new UserCenter(&#39;13800138000&#39;, &#39;10086&#39;);
+
+uc.get_token(function (err, token) {
+  if (err) {
+    console.log(err);
+  }
+
+  var token = token;
+
+  Stock.create_product(token, {
+    name: &#39;手机&#39;
+  }, function (err, product) {
+    if (err) {
+      console.log(err);
+    }
+
+    var product = product;
+  })
+})
+</code></pre>
+<p>Result:</p><pre><code>
+</code></pre><p>Callback:</p><pre><code>err          创建的货品信息出现异常时的异常对象
+product      成功时创建的货品信息
+</code></pre>
+
+  <p>方法签名</p>
+  <table class="table table-striped table-bordered table-hover table-condensed">
+  
+    <tr>
+      <td>方法</td>
+      <td colspan="3">Stock.prototype.create_product()</td> 
+    </tr>
+  
+
+    <tr>
+      <td>参数</td>
+      <td>token(String)</td>
+      <td colspan="2"><p>用户 token</p></td>
+    </tr>
+  
+
+    <tr>
+      <td>参数</td>
+      <td>product_info(Object)</td>
+      <td colspan="2"><p>货品信息</p></td>
+    </tr>
+  
+
+    <tr>
+      <td>参数</td>
+      <td>callback(Function)</td>
+      <td colspan="2"><p>回调函数</p></td>
+    </tr>
+  
+
+  
+  </table>
+  
+</section>
+
+      
+        <section id="api_usercenter" class="api">
+  <h2>usercenter: API索引</h2>
+  <ul class="indexs">
+  
+    <li>
+      <a href="#usercenter__get_token">get_token</a>
+    </li>
+
+    <li>
+      <a href="#usercenter__get_user_info">get_user_info</a>
+    </li>
+
+  </ul>
+  <hr />
+
+  
+  <h3 data-id="usercenter__get_token">
+    get_token
+  </h3>
+  
+
+  <p>获取用户 token</p><p>Examples:</p><pre><code class="lang-javascript">var UserCenter = require(&#39;xbm-sdk&#39;).UserCenter;
+var uc = new UserCenter(&#39;13800138000&#39;, &#39;10086&#39;);
+
+uc.get_token(function (err, token) {
+  if (err) {
+    console.log(err);
+  }
+
+  var token = token;
+})
+</code></pre>
+<p>Result:</p><pre><code>eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NmYwZWEyM2E3MzljY2NiNjA2MWY3NjQiLCJ4Ym1faWQiOiIxMDAwMDEiLCJtb2JpbGUiOiIxMzgwMDEzODAwMCIsImNyZWF0ZWRfYXQiOiIyMDE2LTAzLTIyVDA2OjQ1OjU1LjA0N1oiLCJ pYXQiOjE0NTg2Mzk0NDJ9.s8q_vuB4OhWiykASJFHf8RVWGuiHHG-OxuHND8O2kaM
+</code></pre><p>Callback:</p><pre><code>err          获取用户 token 出现异常时的异常对象
+token        成功时得到的用户 token
+</code></pre>
+
+  <p>方法签名</p>
+  <table class="table table-striped table-bordered table-hover table-condensed">
+  
+    <tr>
+      <td>方法</td>
+      <td colspan="3">UserCenter.prototype.get_token()</td> 
+    </tr>
+  
+
+    <tr>
+      <td>参数</td>
+      <td>callback(Function)</td>
+      <td colspan="2"><p>回调函数</p></td>
+    </tr>
+  
+
+  
+  </table>
+  
+  
+  <h3 data-id="usercenter__get_user_info">
+    get_user_info
+  </h3>
+  
+
+  <p>根据 token 获取用户基本信息</p><p>Examples:</p><pre><code class="lang-javascript">var UserCenter = require(&#39;xbm-sdk&#39;).UserCenter;
+var uc = new UserCenter(&#39;13800138000&#39;, &#39;10086&#39;);
+
+uc.get_token(function (err, token) {
+  if (err) {
+    console.log(err);
+  }
+
+  var token = token;
+
+  uc.get_user_info(token, function (err, user_info) {
+    if (err) {
+      console.log(err);
+    }
+
+    var user_info = user_info;
+  })
+})
+</code></pre>
+<p>Result:</p><pre><code>{ 
+  _id: &#39;56f0ea23a739cccb6061f764&#39;,
+  created_minute: &#39;45&#39;,
+  created_hour: &#39;02&#39;,
+  created_day: &#39;22&#39;,
+  created_month: &#39;03&#39;,
+  created_year: &#39;2016&#39;,
+  created_at_ms: &#39;1458629155052&#39;,
+  xbm_id: &#39;100001&#39;,
+  password: &#39;$2a$10$/kFOvMalSbTEHt2IWjxvqetBGN83L47mfUCemirtcadEHTa6oCjrm&#39;,
+  salt: &#39;$2a$10$/kFOvMalSbTEHt2IWjxvqe&#39;,
+  mobile: &#39;13800138000&#39;,
+  __v: 0,
+  is_deleted: false,
+  updated_at: &#39;2016-03-22T06:45:55.047Z&#39;,
+  created_at: &#39;2016-03-22T06:45:55.047Z&#39;,
+  language: &#39;zh_CN&#39;,
+  is_verified_mobile: false,
+  is_verified_email: false,
+  is_verified_real_name: false,
+  login_type: &#39;mobile&#39; 
+}
+</code></pre><p>Callback:</p><pre><code>err          根据 token 获取用户基本信息出现异常时的异常对象
+user_info    成功时得到的用户信息
+</code></pre>
+
+  <p>方法签名</p>
+  <table class="table table-striped table-bordered table-hover table-condensed">
+  
+    <tr>
+      <td>方法</td>
+      <td colspan="3">UserCenter.prototype.get_user_info()</td> 
+    </tr>
+  
+
+    <tr>
+      <td>参数</td>
+      <td>token(String)</td>
+      <td colspan="2"><p>用户 token</p></td>
+    </tr>
+  
+
+    <tr>
+      <td>参数</td>
+      <td>callback(Function)</td>
+      <td colspan="2"><p>回调函数</p></td>
+    </tr>
+  
+
+  
+  </table>
+  
+</section>
+
+      
+    </div>
+  </div>
+</div>
+      <footer class="footer">
+        <div class="container">
+          <p class="pull-right">
+            <a href="#">Back to top</a>
+          </p>
+          <p>此文档通过doxmate生成。主题借鉴Bootstrap API文档风格，注解基于<a href="https://github.com/visionmedia/dox">Dox</a>。欢迎关注doxmate作者<a href="http://weibo.com/shyvo" target="_blank">@朴灵</a></p>
+          <ul class="footer-links">
+            <li><a href="https://github.com/visionmedia/dox">Dox主页</a></li>
+            <li><a href="http://html5ify.com/doxmate">Doxmate主页</a></li>
+            <li><a href="https://github.com/JacksonTian/doxmate">Doxmate源码</a></li>
+            <li><a href="https://github.com/JacksonTian/doxmate/issues?state=open">提交bug</a></li>
+          </ul>
+      </div>
+    </footer>
+    <script>
+      $(function() {
+        $('pre').addClass('prettyprint');
+        $('td pre').removeClass('prettyprint');
+        prettyPrint();
+        var $window = $(window);
+        var sidenav = $('.bs-docs-sidenav');
+        if (sidenav.height() < window.innerHeight) {
+          sidenav.affix({
+            offset: {
+              top: function () {
+                return $window.width() <= 980 ? 290 : 210
+              },
+              bottom: 200
+            }
+          });
+        } else {
+          sidenav.removeClass('affix');
+        }
+        $(".content").find('h1, h2, h3, h4, h5, h6').each(function () {
+          var node = $(this);
+          // 总是设置id
+          node.attr("id", node.data('id') || "index_" + node.text());
+        });
+
+        $('.bs-docs-sidenav .accordion-marker').on('click', function(event) {
+          var current = $(event.currentTarget);
+          current.find('.glyphicon').toggleClass('glyphicon-chevron-right glyphicon-chevron-down');
+        });
+      });
+    </script>
+  
+  </body>
+</html>
+
