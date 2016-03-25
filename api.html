@@ -128,9 +128,12 @@
   </h3>
   
 
-  <p>创建</p><p>Examples:</p><pre><code class="lang-javascript">var UserCenter = require(&#39;xbm-sdk&#39;).UserCenter;
+  <p>创建货品</p><p>Examples:</p><pre><code class="lang-javascript">var UserCenter = require(&#39;xbm-sdk&#39;).UserCenter;
 var Stock = require(&#39;xbm-sdk&#39;).Stock;
+
 var uc = new UserCenter(&#39;13800138000&#39;, &#39;10086&#39;);
+var stock = new Stock();
+
 
 uc.get_token(function (err, token) {
   if (err) {
@@ -139,7 +142,7 @@ uc.get_token(function (err, token) {
 
   var token = token;
 
-  Stock.create_product(token, {
+  stock.create_product(token, {
     name: &#39;手机&#39;
   }, function (err, product) {
     if (err) {
@@ -150,7 +153,24 @@ uc.get_token(function (err, token) {
   })
 })
 </code></pre>
-<p>Result:</p><pre><code>
+<p>Result:</p><pre><code>{ __v: 0,
+  created_minute: &#39;05&#39;,
+  created_hour: &#39;10&#39;,
+  created_day: &#39;25&#39;,
+  created_month: &#39;03&#39;,
+  created_year: &#39;2016&#39;,
+  created_at_ms: &#39;1458871525813&#39;,
+  name: &#39;手机&#39;,
+  name_pinyin: &#39;shou;ji&#39;,
+  user_id: &#39;56f0ea23a739cccb6061f764&#39;,
+  user_mobile: &#39;13800138000&#39;,
+  xbm_id: &#39;100001&#39;,
+  is_deleted: false,
+  updated_at: &#39;2016-03-25T02:05:25.812Z&#39;,
+  created_at: &#39;2016-03-25T02:05:25.812Z&#39;,
+  _id: &#39;56f49ce5540e29677c6d6c43&#39;,
+  pictures: [] 
+}
 </code></pre><p>Callback:</p><pre><code>err          创建的货品信息出现异常时的异常对象
 product      成功时创建的货品信息
 </code></pre>
