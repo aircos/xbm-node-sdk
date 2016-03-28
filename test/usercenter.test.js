@@ -4,6 +4,9 @@ var should = require('chai').should();
 
 var UserCenter = require('../index.js').UserCenter;
 
+var mobile = '13800138000';
+var password = '10086';
+
 /**
  * 测试 lib/usercenter.js 文件
  * @Author   https://github.com/modood
@@ -11,8 +14,8 @@ var UserCenter = require('../index.js').UserCenter;
  */
 describe('TEST file lib/usercenter.js', function () {
   describe('TEST function get_token', function () {
-    it('成功获取token', function (done) {
-      var uc = new UserCenter('13800138000', '10086');
+    it('成功，获取token', function (done) {
+      var uc = new UserCenter(mobile, password);
       uc.get_token(function (err, token) {
         should.not.exist(err);
         should.exist(token);
@@ -20,8 +23,8 @@ describe('TEST file lib/usercenter.js', function () {
         done();
       })
     });
-    it('密码错误', function (done) {
-      var uc = new UserCenter('13800138000', '1008611');
+    it('失败，密码错误', function (done) {
+      var uc = new UserCenter(mobile, password + '1');
       uc.get_token(function (err, token) {
         should.exist(err);
         should.not.exist(token);
@@ -32,9 +35,7 @@ describe('TEST file lib/usercenter.js', function () {
   })
 
   describe('TEST function get_user_info', function () {
-    it('成功获取用户信息', function (done) {
-      var mobile = '13800138000';
-      var password = '10086';
+    it('成功，获取用户信息', function (done) {
       var uc = new UserCenter(mobile, password);
       uc.get_token(function (err, token) {
         should.not.exist(err);
@@ -47,7 +48,7 @@ describe('TEST file lib/usercenter.js', function () {
         })
       })
     });
-    it('token信息错误', function (done) {
+    it('失败，token信息错误', function (done) {
       var uc = new UserCenter();
 
       uc.get_user_info('this is not a token', function (err, user_info) {
@@ -56,7 +57,7 @@ describe('TEST file lib/usercenter.js', function () {
         done();
       })
     });
-    it('没有提供token', function (done) {
+    it('失败，没有提供token', function (done) {
       var uc = new UserCenter();
 
       uc.get_user_info(undefined, function (err, user_info) {
